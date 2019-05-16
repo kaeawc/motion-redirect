@@ -3,14 +3,21 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
-    <StateSet motion:defaultState="@id/placeholder" />
+    <StateSet motion:defaultState="@id/placeholder_start" />
 
-    <Transition motion:motionInterpolator="cubic(0.0,0.2,0.2,0.8)" motion:duration="500" motion:constraintSetStart="@id/placeholder" motion:constraintSetEnd="@id/top_left"/>
-    <Transition motion:motionInterpolator="cubic(0.0,0.2,0.2,0.8)" motion:duration="500" motion:constraintSetStart="@id/placeholder" motion:constraintSetEnd="@id/bottom_left"/>
-    <Transition motion:motionInterpolator="cubic(0.0,0.2,0.2,0.8)" motion:duration="500" motion:constraintSetStart="@id/placeholder" motion:constraintSetEnd="@id/bottom_right"/>
-    <Transition motion:motionInterpolator="cubic(0.0,0.2,0.2,0.8)" motion:duration="500" motion:constraintSetStart="@id/placeholder" motion:constraintSetEnd="@id/top_right"/>
+    <Transition motion:motionInterpolator="cubic(0.0,0.2,0.2,1.0)" motion:duration="250" motion:constraintSetStart="@id/placeholder_start" motion:constraintSetEnd="@id/placeholder_end" />
+    <Transition motion:motionInterpolator="cubic(0.2,0.0,0.8,0.6)" motion:duration="250" motion:constraintSetStart="@id/placeholder_end" motion:constraintSetEnd="@id/top_left"/>
+    <Transition motion:motionInterpolator="cubic(0.2,0.0,0.8,0.6)" motion:duration="250" motion:constraintSetStart="@id/placeholder_end" motion:constraintSetEnd="@id/bottom_left"/>
+    <Transition motion:motionInterpolator="cubic(0.2,0.0,0.8,0.6)" motion:duration="250" motion:constraintSetStart="@id/placeholder_end" motion:constraintSetEnd="@id/bottom_right"/>
+    <Transition motion:motionInterpolator="cubic(0.2,0.0,0.8,0.6)" motion:duration="250" motion:constraintSetStart="@id/placeholder_end" motion:constraintSetEnd="@id/top_right"/>
 
-    <ConstraintSet android:id="@+id/placeholder">
+    <ConstraintSet android:id="@+id/placeholder_start" motion:pathMotionArc="flip">
+        <Constraint android:id="@id/ball_view"/>
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/placeholder_end" motion:pathMotionArc="flip">
+        <Constraint android:id="@id/ball_view"/>
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/center">
         <Constraint android:id="@id/ball_view"/>
     </ConstraintSet>
     <ConstraintSet android:id="@+id/top_left">

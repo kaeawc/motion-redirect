@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_height">64dp</dimen>
+    <dimen name="margin">16dp</dimen>
+    <dimen name="ball_size">64dp</dimen>
+    <dimen name="ball_and_margin">80dp</dimen>
+</resources>
