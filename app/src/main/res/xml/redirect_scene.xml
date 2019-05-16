@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <StateSet motion:defaultState="@id/placeholder" />
+
+    <Transition motion:motionInterpolator="cubic(0.0,0.2,0.2,0.8)" motion:duration="500" motion:constraintSetStart="@id/placeholder" motion:constraintSetEnd="@id/top_left"/>
+    <Transition motion:motionInterpolator="cubic(0.0,0.2,0.2,0.8)" motion:duration="500" motion:constraintSetStart="@id/placeholder" motion:constraintSetEnd="@id/bottom_left"/>
+    <Transition motion:motionInterpolator="cubic(0.0,0.2,0.2,0.8)" motion:duration="500" motion:constraintSetStart="@id/placeholder" motion:constraintSetEnd="@id/bottom_right"/>
+    <Transition motion:motionInterpolator="cubic(0.0,0.2,0.2,0.8)" motion:duration="500" motion:constraintSetStart="@id/placeholder" motion:constraintSetEnd="@id/top_right"/>
+
+    <ConstraintSet android:id="@+id/placeholder">
+        <Constraint android:id="@id/ball_view"/>
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/top_left">
+        <Constraint android:id="@id/ball_view"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            />
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/bottom_left">
+        <Constraint android:id="@id/ball_view"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginBottom="128dp"
+            android:layout_marginStart="16dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            />
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/bottom_right">
+        <Constraint android:id="@id/ball_view"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginBottom="128dp"
+            android:layout_marginEnd="16dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            />
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/top_right">
+        <Constraint android:id="@id/ball_view"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            />
+    </ConstraintSet>
+
+</MotionScene>
